@@ -5,10 +5,13 @@ import './App.css'
 
 function App() {
 
+  let countervisible = false;
+
   return (
     <div>
-      Yo nigga
-    <Counter />
+      {countervisible ? <Counter></Counter>: null}
+      {countervisible && <Counter></Counter>}
+    
     </div>
   );
 }
@@ -35,7 +38,7 @@ function Counter() {
   useEffect(function(){
     setInterval(function clock(){
       setcount2(count2 => count2+1);
-    }, 0.0000001);
+    }, 100);
   }, []);
 
   
