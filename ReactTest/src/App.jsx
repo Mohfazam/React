@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react'
 import './App.css'
 
 
@@ -32,9 +32,13 @@ function Counter() {
     setcount(0);
   }
 
-  setInterval(function clock(){
-    setcount2(count2+1);
-  }, 1000);
+  useEffect(function(){
+    setInterval(function clock(){
+      setcount2(count2 => count2+1);
+    }, 0.0000001);
+  }, []);
+
+  
 
   return (
     <div>
