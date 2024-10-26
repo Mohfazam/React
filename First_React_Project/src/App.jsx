@@ -1,5 +1,6 @@
 import React from 'react';
-import UserCard from './components/UserCard';
+import './App.css';
+import UserCard from '../src/components/usercard';
 
 
 
@@ -7,7 +8,7 @@ function App() {
  
 
   return (
-    <div className='container' style={{ display: 'flex', flexDirection: 'row', gap: '20px' }}>
+    <div className='container' >
     <UserCard />
     <UserCard />
     <UserCard />

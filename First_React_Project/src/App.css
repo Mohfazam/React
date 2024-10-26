@@ -1,5 +1,9 @@
 .container {
-  display: 'flex';
-  flex-Direction: 'row';
-  gap: '20px';  /* Optional: to center the cards within the container */
+  display: flex;  
+  height: 90vh;
+  width: 100vw;
+  flex-direction: row;  
+  gap: 20px;
+  justify-content: center;  
+  align-items: center;  
 }
