@@ -23,10 +23,20 @@ function Counter() {
     setcount(count+1);
   }
 
+  function decreasecount(){
+    setcount(count-1);
+  }
+
+  function resetcount(){
+    setcount(0);
+  }
+
   return (
     <div>
       <h1>{count}</h1>
     <button onClick={increasecount}>Increase Count</button>
+    <button onClick={decreasecount}>Decrease Count</button>
+    <button onClick={resetcount}>Reset Count</button>
     </div>
   );
 }
