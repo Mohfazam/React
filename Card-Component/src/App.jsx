@@ -2,17 +2,37 @@ import "./App.css";
 
 function App() {
   return (
-    <div style={{background: "#dfe6e9", height: "100vh"}}>
-      <div style={{display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center"}}>
-      <br />
-      <br />
-      <PostComponent data="Sarwar v1" followers="100" description="In depression due to Javascript" time="2 mins ago"/>
-      <br />
-      <PostComponent data="Sarwar v2" followers="200" description="In depression due to React" time = "1 min ago"/>
-      <br />
-      <PostComponent data="Sarwar v3" followers="3470" description="In depression due to Express" time = "4 min ago"/>
+    <div style={{ background: "#dfe6e9", height: "100vh" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <br />
+        <br />
+        <PostComponent
+          data="Sarwar v1"
+          status="100 followers"
+          description="In depression due to Javascript"
+          time="2 mins ago"
+        />
+        <br />
+        <PostComponent
+          data="Sarwar v2"
+          status="200 followers"
+          description="In depression due to React"
+          time="1 min ago"
+        />
+        <br />
+        <PostComponent
+          data="Sarwar v3"
+          status="promoted"
+          description="In depression due to Express"
+        />
       </div>
-      
     </div>
   );
 }
@@ -30,7 +50,7 @@ const style = {
 function PostComponent(props) {
   return (
     <div style={style}>
-      <div style={{display: "flex"}}>
+      <div style={{ display: "flex" }}>
         <img
           src={"../src/assets/image.png"}
           style={{
@@ -45,8 +65,11 @@ function PostComponent(props) {
 
         <div style={{ fontSize: 10, marginLeft: 10 }}>
           <b>{props.data}</b>
-          <div>{props.followers} followers</div>
-          <div>{props.time}</div>
+          <div>{props.status}</div>
+          {props.time !== undefined &&<div style={{display: "flex"}}>
+            <div>{props.time}</div>
+            <img src="../src/assets/clock-icon.svg" style={{width: 12, height: 12, marginLeft: 3}}/>
+          </div>}
         </div>
       </div>
       <div style={{ fontSize: 12 }}>{props.description}</div>
