@@ -1,7 +1,18 @@
+import "./App.css";
+
 function App() {
   return (
-    <div style={{background: "#dfe6e9", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
+    <div style={{background: "#dfe6e9", height: "100vh"}}>
+      <div style={{display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center"}}>
+      <br />
+      <br />
       <PostComponent />
+      <br />
+      <PostComponent />
+      <br />
+      <PostComponent />
+      </div>
+      
     </div>
   );
 }
@@ -25,7 +36,10 @@ function PostComponent() {
           style={{
             width: 40,
             height: 40,
-            borderRadius: 20,
+            borderRadius: 40,
+            marginRight: 10,
+            marginBottom: 10,
+            objectFit: "cover",
           }}
         />
 
