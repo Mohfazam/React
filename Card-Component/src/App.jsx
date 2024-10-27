@@ -6,11 +6,11 @@ function App() {
       <div style={{display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center"}}>
       <br />
       <br />
-      <PostComponent data="Sarwar v1"/>
+      <PostComponent data="Sarwar v1" followers="100" description="In depression due to Javascript" time="2 mins ago"/>
       <br />
-      <PostComponent data="Sarwar v2"/>
+      <PostComponent data="Sarwar v2" followers="200" description="In depression due to React" time = "1 min ago"/>
       <br />
-      <PostComponent data="Sarwar v3"/>
+      <PostComponent data="Sarwar v3" followers="3470" description="In depression due to Express" time = "4 min ago"/>
       </div>
       
     </div>
@@ -45,11 +45,11 @@ function PostComponent(props) {
 
         <div style={{ fontSize: 10, marginLeft: 10 }}>
           <b>{props.data}</b>
-          <div>100 followers</div>
-          <div>20m</div>
+          <div>{props.followers} followers</div>
+          <div>{props.time}</div>
         </div>
       </div>
-      <div style={{ fontSize: 12 }}>In depression due to Javascript</div>
+      <div style={{ fontSize: 12 }}>{props.description}</div>
     </div>
   );
 }
