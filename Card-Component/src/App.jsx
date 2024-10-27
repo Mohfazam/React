@@ -6,11 +6,11 @@ function App() {
       <div style={{display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center"}}>
       <br />
       <br />
-      <PostComponent />
+      <PostComponent data="Sarwar v1"/>
       <br />
-      <PostComponent />
+      <PostComponent data="Sarwar v2"/>
       <br />
-      <PostComponent />
+      <PostComponent data="Sarwar v3"/>
       </div>
       
     </div>
@@ -27,7 +27,7 @@ const style = {
   margin: 10,
 };
 
-function PostComponent() {
+function PostComponent(props) {
   return (
     <div style={style}>
       <div style={{display: "flex"}}>
@@ -44,7 +44,7 @@ function PostComponent() {
         />
 
         <div style={{ fontSize: 10, marginLeft: 10 }}>
-          <b>Mohfazam</b>
+          <b>{props.data}</b>
           <div>100 followers</div>
           <div>20m</div>
         </div>
