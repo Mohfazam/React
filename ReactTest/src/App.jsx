@@ -5,13 +5,14 @@ import './App.css'
 
 function App() {
 
-  let countervisible = false;
+  let countervisible = true;
 
   return (
     <div>
-      {countervisible ? <Counter></Counter>: null}
+      yo man
+      {/* {countervisible ? <Counter></Counter>: null} */}
       {countervisible && <Counter></Counter>}
-    
+      the hood member
     </div>
   );
 }
