@@ -1,14 +1,43 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div>Yo nigga</div>
-  )
+    <div style={{background: "#dfe6e9", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
+      <PostComponent />
+    </div>
+  );
 }
 
-export default App
+const style = {
+  width: 200,
+  backgroundColor: "white",
+  borderRadius: 10,
+  borderColor: "gray",
+  borderWidth: 1,
+  padding: 10,
+  margin: 10,
+};
+
+function PostComponent() {
+  return (
+    <div style={style}>
+      <div style={{display: "flex"}}>
+        <img
+          src={"../src/assets/image.png"}
+          style={{
+            width: 40,
+            height: 40,
+            borderRadius: 20,
+          }}
+        />
+
+        <div style={{ fontSize: 10, marginLeft: 10 }}>
+          <b>Mohfazam</b>
+          <div>100 followers</div>
+          <div>20m</div>
+        </div>
+      </div>
+      <div style={{ fontSize: 12 }}>In depression due to Javascript</div>
+    </div>
+  );
+}
+
+export default App;
