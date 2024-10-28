@@ -12,6 +12,10 @@ function App() {
     setInterval(increment, 1000);
   }, []);
 
+  useEffect(function(){
+    console.log("Count value is " + count);
+  }, [count]);
+
   return(
     <div>
       {count}
