@@ -43,7 +43,7 @@ function App() {
   }
 
   return (
-    <div style={{ background: "#dfe6e9", height: "100vh" }}>
+    <div style={{ background: "#dfe6e9", height: "100%" }}>
       <button onClick={AddPost}>Addpost</button>
       <div
         style={{
