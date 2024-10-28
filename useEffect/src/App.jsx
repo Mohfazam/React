@@ -5,7 +5,7 @@ function App() {
   const [count, setCount] = useState(0);
 
   function increment(){
-    setCount(count + 1);
+    setCount(val => val + 1);
   }
 
   useEffect(function () {
