@@ -1,8 +1,49 @@
+import { useState } from "react";
 import "./App.css";
 
 function App() {
+  const posts= [
+    {
+      data: "Sarwar v4",
+      status: "600 followers",
+      description: "In depression due to Javascript",
+      time: "22 mins ago",
+      image: "../src/assets/image.png",
+    },
+    {
+      data: "Sarwar v5",
+      status: "290 followers",
+      description: "In depression due to React",
+      time: "10 min ago",
+      image: "../src/assets/image.png",
+    },
+    {
+      data: "Sarwar v6",
+      status: "promoted",
+      description: "In depression due to USESTATE",
+    },
+    {
+      data: "Sarwar v7",
+      status: "promoted",
+      description: "In depression due to eveything",
+    }
+  ];
+
+  const PostComponents = posts.map((post) => (
+    <PostComponent
+      data={post.data}
+      status={post.status}
+      description={post.description}
+      image={post.image}
+      time={post.time}
+    />
+  ));
+
+  function AddPost() {}
+
   return (
     <div style={{ background: "#dfe6e9", height: "100vh" }}>
+      <button onClick={AddPost}>Addpost</button>
       <div
         style={{
           display: "flex",
@@ -11,27 +52,9 @@ function App() {
           alignItems: "center",
         }}
       >
-        <br />
-        <br />
-        <PostComponent
-          data="Sarwar v1"
-          status="100 followers"
-          description="In depression due to Javascript"
-          time="2 mins ago"
-        />
-        <br />
-        <PostComponent
-          data="Sarwar v2"
-          status="200 followers"
-          description="In depression due to React"
-          time="1 min ago"
-        />
-        <br />
-        <PostComponent
-          data="Sarwar v3"
-          status="promoted"
-          description="In depression due to Express"
-        />
+        <div>
+        {PostComponents}
+        </div>
       </div>
     </div>
   );
@@ -66,10 +89,15 @@ function PostComponent(props) {
         <div style={{ fontSize: 10, marginLeft: 10 }}>
           <b>{props.data}</b>
           <div>{props.status}</div>
-          {props.time !== undefined &&<div style={{display: "flex"}}>
-            <div>{props.time}</div>
-            <img src="../src/assets/clock-icon.svg" style={{width: 12, height: 12, marginLeft: 3}}/>
-          </div>}
+          {props.time !== undefined && (
+            <div style={{ display: "flex" }}>
+              <div>{props.time}</div>
+              <img
+                src="../src/assets/clock-icon.svg"
+                style={{ width: 12, height: 12, marginLeft: 3 }}
+              />
+            </div>
+          )}
         </div>
       </div>
       <div style={{ fontSize: 12 }}>{props.description}</div>
