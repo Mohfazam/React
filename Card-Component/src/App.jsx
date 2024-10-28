@@ -2,8 +2,20 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  const posts= [
-    {
+  const [posts, setPosts] = useState([]);
+
+  const PostComponents = posts.map((post) => (
+    <PostComponent
+      data={post.data}
+      status={post.status}
+      description={post.description}
+      image={post.image}
+      time={post.time}
+    />
+  ));
+
+  function AddPost() {
+    setPosts([...posts, {
       data: "Sarwar v4",
       status: "600 followers",
       description: "In depression due to Javascript",
@@ -26,20 +38,9 @@ function App() {
       data: "Sarwar v7",
       status: "promoted",
       description: "In depression due to eveything",
-    }
-  ];
-
-  const PostComponents = posts.map((post) => (
-    <PostComponent
-      data={post.data}
-      status={post.status}
-      description={post.description}
-      image={post.image}
-      time={post.time}
-    />
-  ));
-
-  function AddPost() {}
+    }])
+    
+  }
 
   return (
     <div style={{ background: "#dfe6e9", height: "100vh" }}>
