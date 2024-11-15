@@ -2,58 +2,68 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { useRecoilState, useRecoilValue, RecoilRoot } from 'recoil';
+import { useRecoilState, useSetRecoilState, useRecoilValue, RecoilRoot } from 'recoil';
 import { counterAtom, isEvenSelector } from './store/atoms/counter';
 
 
-function App(){
-  return <div>
+function App() {
+  return (
     <RecoilRoot>
       <Buttons />
       <Counter />
       <IsEven />
     </RecoilRoot>
-  </div>
+  );
 }
 
 function Buttons() {
-
-  const [,setCount] = useRecoilState(counterAtom)
-
-  function increase(){
-    setCount(c => c + 2);
-  }
-
-  function decrease(){
-    setCount(c => c - 1);
-  }
-
   return (
     <div>
-      <button onClick = {increase}>Increase</button>
-      <button onClick = {decrease}>Decrease</button>
+      <Increase />
+      <Decrease />
     </div>
-  )
+  );
 }
 
-function Counter(){
+function Increase() {
+  const setCount = useSetRecoilState(counterAtom);
 
+  function increase() {
+    setCount((c) => c + 2);
+  }
+
+  console.log("Increase button rendered");
+
+  return <button onClick={increase}>Increase</button>;
+}
+
+function Decrease() {
+  const setCount = useSetRecoilState(counterAtom);
+
+  function decrease() {
+    setCount((c) => c - 1);
+  }
+
+  console.log("Decrease button rendered");
+
+  return <button onClick={decrease}>Decrease</button>;
+}
+
+function Counter() {
   const count = useRecoilValue(counterAtom);
-  return (
-    <div>
-      {count}
-    </div>
-  )
+
+  console.log("Counter rendered");
+
+  return <div>{count}</div>;
 }
 
-function IsEven(){
+function IsEven() {
   const even = useRecoilValue(isEvenSelector);
 
-  return (
-    <div>
-      {even ? 'Even' : 'odd'}
-    </div>
-  )
+  console.log("IsEven rendered");
+
+  return <div>{even ? "Even" : "Odd"}</div>;
 }
+
 
 export default App;
