@@ -16,7 +16,7 @@ function App() {
     
       <div>
         
-        <MemoizedCount />
+        <Counter />
       </div>
     
   )
@@ -33,46 +33,49 @@ function Counter(){
 }
 
 
-const MemoizedCount = memo(Counter);
-
-function CurrentCount(){
-
-  return(
-    <div>
-      hey
-    </div>
-  )
-}
 
 
-function Decrease(){
-
+const CurrentCount = memo(function () {
   
 
-  function decrease(){
+    return(
+      <div>
+        hey
+      </div>
+    )
+  
+});
+
+
+const Decrease = memo(function () {
+  function decrease () {
     
   }
-
-  return(
-    <div>
-      <button onClick={decrease}>Decrease</button>
-    </div>
-  )
-}
-
-function Increase(){
-
   
+
+    return(
+      <div>
+        <button onClick={decrease}>Decrease</button>
+      </div>
+    )
+  
+})
+
+const Increase = memo(function () {
 
   function increase(){
-    
-  }
 
-  return(
-    <div>
-      <button onClick={increase}>Increae</button>
-    </div>
-  )
-}
+  }
+  
+
+    return(
+      <div>
+        <button onClick={increase}>Increae</button>
+      </div>
+    )
+  
+})
+
+
 
 export default App
