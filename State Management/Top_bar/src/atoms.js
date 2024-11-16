@@ -20,5 +20,5 @@ export const notificationsAtom = atom({
 
 export const messagingAtom = atom({
     key: 'messagingAtom',
-    default: 600
+    default: 6
 })
