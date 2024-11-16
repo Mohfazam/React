@@ -2,23 +2,23 @@ import { atom } from 'recoil'
 
 export const networkAtom = atom({
     key: 'networkAtom',
-    default: 190
+    default: 20
 })
 
 
 export const jobsAtom = atom({
     key: 'jobsAtom',
-    default: 100
+    default: 11
 })
 
 
 export const notificationsAtom = atom({
     key: 'notificationsAtom',
-    default: 120
+    default: 13
 })
 
 
 export const messagingAtom = atom({
     key: 'messagingAtom',
-    default: 6
+    default: 7
 })

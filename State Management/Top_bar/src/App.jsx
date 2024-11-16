@@ -13,27 +13,28 @@ return (
   
 }
 
-function MainApp() {
+function MainApp(){
   const networkNotificationCount = useRecoilValue(networkAtom);
   const jobsAtomCount = useRecoilValue(jobsAtom);
   const notificationsAtomCount = useRecoilValue(notificationsAtom);
-  const [messagingAtomCount, setMessagingAtomCount] = useRecoilState(messagingAtom);
+  const  messagingAtomCount = useRecoilValue(messagingAtom);
 
-  return (
+ 
+
+  return(
     <>
-      <button>Home</button>
-      <button>My network {networkNotificationCount >= 100 ? "99+" : networkNotificationCount}</button>
-      <button>Jobs {jobsAtomCount >= 100 ? "99+" : jobsAtomCount}</button>
-      <button>Notifications {  notificationsAtomCount >= 100 ? "99+" : notificationsAtomCount}</button>
-      <button onClick={() => {
-          setMessagingAtomCount(messagingAtomCount + 1);
-        }}
-      >Messaging {messagingAtomCount >= 100 ? "99+" : messagingAtomCount}</button>
-      <button>Me</button>
-    </>
-  );
-}
+    <button>Home</button>
 
+    <button>My network {networkNotificationCount >= 100 ? "99+" : networkNotificationCount}</button>
+    <button>Jobs {jobsAtomCount >= 100 ? "99+" : jobsAtomCount}</button>
+    <button >Notifications {notificationsAtomCount>= 100 ? "99+" : notificationsAtomCount}</button>
+    <button>messaging {messagingAtomCount >= 100 ? "99+" : messagingAtomCount}</button>
+    
+
+    <button>Me</button>
+    </>
+  )
+}
 
 
 export default App;
