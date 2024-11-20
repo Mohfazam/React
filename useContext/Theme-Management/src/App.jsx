@@ -6,10 +6,18 @@ const themeContext = createContext();
 
 function App() {
   const [theme, setTheme] = useState("light");
+  function backGroundColor(){
+    if(theme === "light"){
+      return "white";
+    }
+    else{
+      return "black";
+    }
+  }
 
   return (
     <themeContext.Provider value={{theme, setTheme}} >
-      <div id='container' style={{backgroundColor:theme ==="light" ? "white" : "black"}}>
+      <div id='container' style={{backgroundColor:backGroundColor()}}>
         <ChildA />
       </div>
     </themeContext.Provider>
