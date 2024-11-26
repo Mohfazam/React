@@ -18,7 +18,8 @@ function App() {
     <form onSubmit={handleSubmit(onSubmit)}>
       <div>
         <label>First Name: </label>
-        <input {...register('firstName', {required: true,  maxLength: 20, minLength: 3})}/>
+        <input {...register('firstName', {required: true,  maxLength: 20, minLength: {value: 3, message: "Characters are less then required"}})}/>
+        {errors.firstName && <p>{errors.firstName.message}</p>}
       </div>
       <br />
       <div>
