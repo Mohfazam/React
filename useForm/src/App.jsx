@@ -18,18 +18,18 @@ function App() {
     <form onSubmit={handleSubmit(onSubmit)}>
       <div>
         <label>First Name: </label>
-        <input {...register('firstName', {required: true,  maxLength: 20})}/>
+        <input {...register('firstName', {required: true,  maxLength: 20, minLength: 3})}/>
       </div>
       <br />
       <div>
         <label>Middle Name: </label>
-        <input {...register('middlename', {required: true,  maxLength: 20})}/>
+        <input {...register('middlename', {required: true,  maxLength: 20, minLength: 3})}/>
       </div>
       <br />
 
       <div>
         <label>last Name: </label>
-        <input {...register('lastname', {required: true,  maxLength: 20})}/>
+        <input {...register('lastname', {required: true,  maxLength: 20, minLength: 3})}/>
       </div>
 
       <input type="submit" value="Submit" />
